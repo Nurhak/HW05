@@ -13,6 +13,12 @@ import java.util.Comparator;
 public class CompHeap implements Comparator<Integer> {
 
     public int compare(Integer left, Integer right){
-        return Integer.compare(right,left);
+        if(left < right){
+            return 1;
+        }else if(left == right){
+            return 0;
+        }else {
+            return -1;
+        }
     }
 }
