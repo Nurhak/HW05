@@ -12,11 +12,13 @@ import java.util.Comparator;
 
 public class nPriorityQueue<E extends Comparable<E>> {
 
+    //Data Fields
     // The binary heap.
     nBinaryHeap<E> binaryHeap;
 
+    //Constructors
     /**
-     * Creates emppty PriorityQueue with natural ordering.
+     * Creates empty PriorityQueue with natural ordering.
      */
     public  nPriorityQueue(){
         binaryHeap = new nBinaryHeap<>();
@@ -32,7 +34,7 @@ public class nPriorityQueue<E extends Comparable<E>> {
 
     /**
      * Creates a PriorityQueue with comparator.
-     * @param comp ç
+     * @param comp The comparator.
      */
     public nPriorityQueue(Comparator comp){
         binaryHeap = new nBinaryHeap<>(comp);
@@ -113,5 +115,17 @@ public class nPriorityQueue<E extends Comparable<E>> {
      */
     public String toString(){
         return binaryHeap.toString();
+    }
+
+    /**
+     * Returns {@code true} if this queue contains no elements.
+     *
+     * @return {@code true} if this queue contains no elements
+     */
+    public boolean isEmpt(){
+        if(binaryHeap.isEmpty())
+            return true;
+        else
+            return false;
     }
 }

@@ -83,7 +83,7 @@ public class nBinaryHeap<E extends Comparable<E>> {
     /**
      * Check the parents of the child and swap them according to compare method.
      */
-    private void siftUp() {
+    private void checktoUp() {
         int k = heap.size() - 1;
         while (k > 0) {
             int p = (k-1)/2;
@@ -109,14 +109,14 @@ public class nBinaryHeap<E extends Comparable<E>> {
      */
     public boolean insert(E item) {
         boolean result = heap.add(item);
-        siftUp();
+        checktoUp();
         return result;
     }
 
     /**
      * Check the parents of the child and swap them according to compare method.
      */
-    private void siftDown() {
+    private void checktoDown() {
         int k = 0;
         int l = 2*k+1;
         while (l < heap.size()) {
@@ -154,7 +154,7 @@ public class nBinaryHeap<E extends Comparable<E>> {
         }
         E hold = heap.get(0);
         heap.set(0, heap.remove(heap.size()-1));
-        siftDown();
+        checktoDown();
         return hold;
     }
 
@@ -171,7 +171,7 @@ public class nBinaryHeap<E extends Comparable<E>> {
         }
         E hold = heap.get(0);
         heap.set(0, heap.remove(heap.size()-1));
-        siftDown();
+        checktoDown();
         return hold;
     }
 
@@ -221,7 +221,6 @@ public class nBinaryHeap<E extends Comparable<E>> {
      */
     public boolean isEmpty() {
         return heap.isEmpty();
-
     }
 
     /**
