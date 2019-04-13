@@ -111,9 +111,15 @@ public class nPixel implements Comparable<nPixel> {
 
     /**
      * Compares this object with the specified object for order.
-     * @return 0.
+     * @return 1 if the other objects red value greaten than this,0 if the red values are equal, -1 if the
+     * this object red value greater than the other one.
      */
     public int compareTo(nPixel o) {
-        return 0;
+        if (o.getRed() > this.getRed())
+                return 1;
+        else if (o.getRed() == this.getRed())
+            return 0;
+        else
+             return -1;
     }
 }
